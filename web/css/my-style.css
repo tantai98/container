@@ -98,3 +98,34 @@
     padding: 10px 5px;
     font-family: inherit;
 }
+.menu-child{
+    display: none;
+    width: 300px;
+}
+.menu-child>ul>li {
+    color: #ffffff !important;
+    font-size: 1em;
+    margin: 0;
+    text-decoration: none;
+    padding: 1em;
+    font-weight: 600;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+    border: solid 1px rgba(255, 255, 255, 0.54);
+    list-style: none;
+}
+.menu-child>ul>li>a {
+    color: #ffffff !important;
+}
+.menu-has-child:hover .menu-child {
+    display: block;
+}
+.menu-child ul li:hover {
+    background: #ffffff !important;
+}
+.menu-child ul li:hover a {
+    color: #000 !important;
+    text-decoration: none;
+}
+
+
