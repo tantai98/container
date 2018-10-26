@@ -1,0 +1,100 @@
+.with-100 {
+	width: 100%
+}
+.margin-top-15 {
+	margin-top: 15px
+}
+.margin-top-60 {
+	margin-top: 60px
+}
+.margin-top-bot-10{
+	margin: 10px 0px;
+}
+.title a {
+	color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+}
+.title a:hover {
+	color: #fff;
+}
+.section-service {
+	background-color: #4DD0E1;
+    padding: 40px 0;
+}
+.section-service .wt-icon-box-wraper {
+	text-align: right;
+    position: relative;
+    color: #000;
+    padding: 10px;
+}
+.section-service .wt-icon-box-wraper .icon-md {
+    float: right;
+    margin-left: 10px;
+    width: 60px;
+    display: inline-block;
+    text-align: center;
+    padding-top: 8px;
+}
+.section-service .wt-icon-box-wraper .icon-md i {
+    font-size: 45px;
+}
+.section-service .wt-icon-box-wraper .icon-content {
+    overflow: hidden;
+}
+.section-service .wt-icon-box-wraper .icon-content .text-black {
+    color: #000;
+}
+.section-service .wt-icon-box-wraper .icon-content .text-black .counter {
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: 600;
+}
+.font-post {
+	color: #000;
+    font-size: .9em;
+    margin: 1em 0;
+    line-height: 1.8em;
+}
+.head-link{
+	padding: 8px 15px;
+}
+.background-headlink{
+	background-color: #cecece;
+}
+.widget_title > h3 {
+    color: #000;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 700;
+    padding-bottom: 17px;
+    position: relative;
+}
+.widget_title > h3::before {
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, #000000 0%, #ffffff 100%) repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    position: absolute;
+    width: 100px;
+}
+.widget_categories ul {
+    padding-left: 0px;
+}
+.widget_categories ul li {
+    list-style: none;
+}
+.widget_categories ul li a:hover {
+    color: #4DD0E1;
+    text-decoration: none;
+}
+.widget_categories ul li a {
+    border-bottom: 1px solid #f5f5f5;
+    color: #151320;
+    display: block;
+    font-size: 1em;
+    font-weight: 600;
+    font-weight: 500;
+    padding: 10px 5px;
+    font-family: inherit;
+}
