@@ -14,28 +14,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ asset('web/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
 <!--// bootstrap-css -->
 <!-- css -->
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ asset('web/css/style.css') }}" type="text/css" media="all" />
 <!--// css -->
 <!-- font-awesome icons -->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="{{ asset('web/css/font-awesome.css') }}" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <!-- phone style -->
-<link rel="stylesheet" href="css/phone-style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ asset('web/css/phone-style.css') }}" type="text/css" media="all" />
 <!-- phone style -->
 <!-- my style css -->
-<link rel="stylesheet" href="css/my-style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ asset('web/css/my-style.css') }}" type="text/css" media="all" />
 <!-- my style css -->
 <!-- gallery -->
-<link rel="stylesheet" href="css/lightbox.css">
+<link rel="stylesheet" href="{{ asset('web/css/lightbox.css') }}">
 <!-- //gallery -->
 <!-- font -->
 
 <!-- //font -->
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="{{ asset('web/js/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ asset('web/js/bootstrap.js') }}"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -96,7 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<div class="clearfix"> </div>
-			<script src="js/responsiveslides.min.js"></script>
+			<script src="{{ asset('web/js/responsiveslides.min.js') }}"></script>
 			<script>
 						// You can also use "$(window).load(function() {"
 						$(function () {
@@ -205,7 +205,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="box-about margin-5">
 									<div class="tex-center">
 										<span>
-											<image src="demo/sec_about_image_1.png" style="text-align:center"></image>
+											<image src="{{ asset('web/demo/sec_about_image_1.png') }}" style="text-align:center"></image>
 										</span>
 									</div>
 									<div class="margin-top-15">
@@ -218,7 +218,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="box-about margin-5">
 									<div class="tex-center">
 										<span>
-											<image src="demo/sec_about_image_2.png" style="text-align:center"></image>
+											<image src="{{ asset('web/demo/sec_about_image_2.png') }}" style="text-align:center"></image>
 										</span>
 									</div>
 									<div class="margin-top-15">
@@ -231,7 +231,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="box-about margin-5">
 									<div class="tex-center">
 										<span>
-											<image src="demo/sec_about_image_3.png" style="text-align:center"></image>
+											<image src="{{ asset('web/demo/sec_about_image_3.png') }}" style="text-align:center"></image>
 										</span>
 									</div>
 									<div class="margin-top-15">
@@ -246,7 +246,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="box-about margin-5">
 									<div class="tex-center">
 										<span>
-											<image src="demo/sec_about_image_4.png" style="text-align:center"></image>
+											<image src="{{ asset('web/demo/sec_about_image_4.png') }}" style="text-align:center"></image>
 										</span>
 									</div>
 									<div class="margin-top-15">
@@ -259,7 +259,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="box-about margin-5">
 									<div class="tex-center">
 										<span>
-											<image src="demo/sec_about_image_1.png" style="text-align:center"></image>
+											<image src="{{ asset('web/demo/sec_about_image_1.png') }}" style="text-align:center"></image>
 										</span>
 									</div>
 									<div class="margin-top-15">
@@ -272,7 +272,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="box-about margin-5">
 									<div class="tex-center">
 										<span>
-											<image src="demo/sec_about_image_2.png" style="text-align:center"></image>
+											<image src="{{ asset('web/demo/sec_about_image_2.png') }}" style="text-align:center"></image>
 										</span>
 									</div>
 									<div class="margin-top-15">
@@ -429,7 +429,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="grid">
 								<figure class="effect-apollo">
 									<a class="example-image-link" href="images/g1.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-										<img src="images/g1.jpg" alt="" />
+										<img src="{{ asset('web/images/g1.jpg') }}" alt="" />
 										<figcaption>
 										</figcaption>	
 									</a>
@@ -440,7 +440,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="grid">
 								<figure class="effect-apollo">
 									<a class="example-image-link" href="images/g2.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-										<img src="images/g2.jpg" alt="" />
+										<img src="{{ asset('web/images/g2.jpg') }}" alt="" />
 										<figcaption>
 										</figcaption>	
 									</a>
@@ -451,7 +451,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="grid">
 								<figure class="effect-apollo">
 									<a class="example-image-link" href="images/g3.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-										<img src="images/g3.jpg" alt="" />
+										<img src="{{ asset('web/images/g3.jpg') }}" alt="" />
 										<figcaption>
 										</figcaption>		
 									</a>
@@ -462,7 +462,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="grid">
 								<figure class="effect-apollo">
 									<a class="example-image-link" href="images/g4.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-										<img src="images/g4.jpg" alt="" />
+										<img src="{{ asset('web/images/g4.jpg') }}" alt="" />
 										<figcaption>
 										</figcaption>	
 									</a>
@@ -473,7 +473,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="grid">
 								<figure class="effect-apollo">
 									<a class="example-image-link" href="images/g5.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-										<img src="images/g5.jpg" alt="" />
+										<img src="{{ asset('web/images/g5.jpg') }}" alt="" />
 										<figcaption>
 										</figcaption>	
 									</a>
@@ -484,7 +484,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="grid">
 								<figure class="effect-apollo">
 									<a class="example-image-link" href="images/g6.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-										<img src="images/g6.jpg" alt="" />
+										<img src="{{ asset('web/images/g6.jpg') }}" alt="" />
 										<figcaption>
 										</figcaption>		
 									</a>
@@ -495,7 +495,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="grid">
 								<figure class="effect-apollo">
 									<a class="example-image-link" href="images/g7.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-										<img src="images/g7.jpg" alt="" />
+										<img src="{{ asset('web/images/g7.jpg') }}" alt="" />
 										<figcaption>
 										</figcaption>	
 									</a>
@@ -506,7 +506,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="grid">
 								<figure class="effect-apollo">
 									<a class="example-image-link" href="images/g1.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-										<img src="images/g1.jpg" alt="" />
+										<img src="{{ asset('web/images/g1.jpg') }}" alt="" />
 										<figcaption>
 										</figcaption>	
 									</a>
@@ -517,7 +517,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="grid">
 								<figure class="effect-apollo">
 									<a class="example-image-link" href="images/g2.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-										<img src="images/g2.jpg" alt="" />
+										<img src="{{ asset('web/images/g2.jpg') }}" alt="" />
 										<figcaption>
 										</figcaption>		
 									</a>
@@ -528,7 +528,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="grid">
 								<figure class="effect-apollo">
 									<a class="example-image-link" href="images/g3.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-										<img src="images/g3.jpg" alt="" />
+										<img src="{{ asset('web/images/g3.jpg') }}" alt="" />
 										<figcaption>
 										</figcaption>		
 									</a>
@@ -539,7 +539,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="grid">
 								<figure class="effect-apollo">
 									<a class="example-image-link" href="images/g4.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-										<img src="images/g4.jpg" alt="" />
+										<img src="{{ asset('web/images/g4.jpg') }}" alt="" />
 										<figcaption>
 										</figcaption>		
 									</a>
@@ -550,7 +550,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="grid">
 								<figure class="effect-apollo">
 									<a class="example-image-link" href="images/g5.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-										<img src="images/g5.jpg" alt="" />
+										<img src="{{ asset('web/images/g5.jpg') }}" alt="" />
 										<figcaption>
 										</figcaption>		
 									</a>
@@ -558,7 +558,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 						<div class="clearfix"> </div>
-						<script src="js/lightbox-plus-jquery.min.js"> </script>
+						<script src="{{ asset('web/js/lightbox-plus-jquery.min.js') }}"> </script>
 				</div>
 			</div>
 		</div>
@@ -577,7 +577,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="wthree-news-grids">
 					<div class="col-md-12 agile-news-right-info">
 						<div class="col-sm-6">
-							<img src="demo/duan1.jpg" class="with-100">
+							<img src="{{ asset('web/demo/duan1.jpg') }}" class="with-100">
 						</div>
 						<div class="col-sm-6">
 							<h5 class="title"><a href="#">Dự án nhà đẹp</a></h5>
@@ -605,7 +605,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<h6><i class="fa fa-calendar" aria-hidden="true"></i> 24th Dec,2016</h6>
 						</div>
 						<div class="col-sm-6">
-							<img src="demo/duan2.jpg" class="with-100">
+							<img src="{{ asset('web/demo/duan2.jpg') }}" class="with-100">
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -641,7 +641,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="wthree-news-grids">
 					<div class="col-md-4 agile-news-right-info">
-						<div><img src="images/n1.jpg" class="with-100"></div>
+						<div><img src="{{ asset('web/images/n1.jpg') }}" class="with-100"></div>
 						<div class="col-sm-12 agile-news-img-info">
 							<h5><a href="#" data-toggle="modal" data-target="#myModal">Sản phẩm 1</a></h5>
 							<div class="agileits-w3layouts-border"> </div>
@@ -651,7 +651,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="clearfix"> </div>
 					</div>
 					<div class="col-md-4 agile-news-right-info">
-						<div><img src="images/n1.jpg" class="with-100"></div>
+						<div><img src="{{ asset('web/images/n1.jpg') }}" class="with-100"></div>
 						<div class="col-sm-12 agile-news-img-info">
 							<h5><a href="#" data-toggle="modal" data-target="#myModal">Sản phẩm 1</a></h5>
 							<div class="agileits-w3layouts-border"> </div>
@@ -661,7 +661,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="clearfix"> </div>
 					</div>
 					<div class="col-md-4 agile-news-right-info">
-						<div><img src="images/n1.jpg" class="with-100"></div>
+						<div><img src="{{ asset('web/images/n1.jpg') }}" class="with-100"></div>
 						<div class="col-sm-12 agile-news-img-info">
 							<h5><a href="#" data-toggle="modal" data-target="#myModal">Sản phẩm 1</a></h5>
 							<div class="agileits-w3layouts-border"> </div>
@@ -691,7 +691,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="flip-container">
 							<div class="flipper">
 								<div class="front">
-									<img src="images/t1.jpg" alt="" />
+									<img src="{{ asset('web/images/t1.jpg') }}" alt="" />
 								</div>
 								<div class="back">
 									<h4>Nguyễn Tiến Anh</h4>
@@ -711,7 +711,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="flip-container">
 							<div class="flipper">
 								<div class="front">
-									<img src="images/t2.jpg" alt="" />
+									<img src="{{ asset('web/images/t2.jpg') }}" alt="" />
 								</div>
 								<div class="back">
 									<h4>Phan Mạnh Quỳnh</h4>
@@ -731,7 +731,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="flip-container">
 							<div class="flipper">
 								<div class="front">
-									<img src="images/t3.jpg" alt="" />
+									<img src="{{ asset('web/images/t3.jpg') }}" alt="" />
 								</div>
 								<div class="back">
 									<h4>Hoàng Thị Lan</h4>
@@ -751,7 +751,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="flip-container">
 							<div class="flipper">
 								<div class="front">
-									<img src="images/t4.jpg" alt="" />
+									<img src="{{ asset('web/images/t4.jpg') }}" alt="" />
 								</div>
 								<div class="back">
 									<h4>Nguyễn Minh Tuần</h4>
@@ -786,10 +786,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="w3-agile-subscribe">
 					<div class="col-sm-6">
-						<img src="demo/khachhang-logo1.png" class="width-100">
+						<img src="{{ asset('web/demo/khachhang-logo1.png') }}" class="width-100">
 					</div>
 					<div class="col-sm-6">
-						<img src="demo/khachhang-logo1.png" class="width-100">
+						<img src="{{ asset('web/demo/khachhang-logo1.png') }}" class="width-100">
 					</div>
 				</div>
 			</div>
@@ -873,11 +873,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //footer -->
-	<script src="js/responsiveslides.min.js"></script>
-	<script src="js/SmoothScroll.min.js"></script>
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
-	<script type="text/javascript" src="js/my-js.js"></script>
+	<script src="{{ asset('web/js/responsiveslides.min.js') }}"></script>
+	<script src="{{ asset('web/js/SmoothScroll.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('web/js/move-top.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('web/js/easing.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('web/js/my-js.js') }}"></script>
 	<!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {

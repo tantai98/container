@@ -37,6 +37,7 @@ use App\CommentProduct;
 class PageController extends Controller {
 
    public function index(){
+      return view('container');
    }
    public function getDanhmuc(){
    }
