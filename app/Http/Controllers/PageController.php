@@ -10,34 +10,17 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use Session;
 use Redirect;
-use App\Post;
+
 use DB;
-use App\Contact;
-use Mail;
-use App\Order;
-use App\OrderItem;
+use App\Menu;
 
-use App\CategoryProduct;
-use App\Category;
-use App\Filter;
-use App\FilterPrice;
-use App\Attribute;
-use App\ProductAttribute;
-use App\Product;
-use App\ContentProduct;
-use App\ProductInCategory;
-use App\ProductImage;
-use App\Form;
-use App\System;
-
-use App\Account;
-use App\CommentPost;
-use App\CommentProduct;
 
 class PageController extends Controller {
 
-   public function index(){
-      return view('container');
+   public function index(){dd(1);
+      $menu = Menu::getAllMenu();
+      dd($menu);
+      return view('frontend.pages.home');
    }
    public function getDanhmuc(){
    }

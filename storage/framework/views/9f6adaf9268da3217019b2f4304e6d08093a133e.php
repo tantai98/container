@@ -1,0 +1,899 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>3D Panel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Global Tours Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link href="<?php echo e(asset('web/css/bootstrap.css')); ?>" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstrap-css -->
+<!-- css -->
+<link rel="stylesheet" href="<?php echo e(asset('web/css/style.css')); ?>" type="text/css" media="all" />
+<!--// css -->
+<!-- font-awesome icons -->
+<link href="<?php echo e(asset('web/css/font-awesome.css')); ?>" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<!-- phone style -->
+<link rel="stylesheet" href="<?php echo e(asset('web/css/phone-style.css')); ?>" type="text/css" media="all" />
+<!-- phone style -->
+<!-- my style css -->
+<link rel="stylesheet" href="<?php echo e(asset('web/css/my-style.css')); ?>" type="text/css" media="all" />
+<!-- my style css -->
+<!-- gallery -->
+<link rel="stylesheet" href="<?php echo e(asset('web/css/lightbox.css')); ?>">
+<!-- //gallery -->
+<!-- font -->
+
+<!-- //font -->
+<script src="<?php echo e(asset('web/js/jquery-1.11.1.min.js')); ?>"></script>
+<script src="<?php echo e(asset('web/js/bootstrap.js')); ?>"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script> 
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+	<div class="banner-top">
+		<div class="slider">
+			<div class="callbacks_container">
+				<ul class="rslides callbacks callbacks1" id="slider4">
+					<li>
+						<div class="w3layouts-banner-top">
+							<div class="container">
+								<div class="agileits-banner-info">
+									<h3>C</h3>
+									<h4>Chất Lượng</h4>
+								</div>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="w3layouts-banner-top w3layouts-banner-top1">
+							<div class="container">
+								<div class="agileits-banner-info1">
+									<h3>U</h3>
+									<h4>Uy Tín</h4>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="w3layouts-banner-top w3layouts-banner-top2">
+							<div class="container">
+								<div class="agileits-banner-info2">
+									<h3>N</h3>
+									<h4>Nhanh Chóng</h4>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="w3layouts-banner-top w3layouts-banner-top3">
+							<div class="container">
+								<div class="agileits-banner-info3">
+									<h3>B</h3>
+									<h4>Bảo Mật</h4>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+			<script src="<?php echo e(asset('web/js/responsiveslides.min.js')); ?>"></script>
+			<script>
+						// You can also use "$(window).load(function() {"
+						$(function () {
+						  // Slideshow 4
+						  $("#slider4").responsiveSlides({
+							auto: true,
+							pager:true,
+							nav:false,
+							speed: 500,
+							namespace: "callbacks",
+							before: function () {
+							  $('.events').append("<li>before event fired.</li>");
+							},
+							after: function () {
+							  $('.events').append("<li>after event fired.</li>");
+							}
+						  });
+					
+						});
+			</script>
+			<!--banner Slider starts Here-->
+		</div>
+	</div>
+	<!-- banner -->
+	<div class="banner">
+		<div class="header">
+			<div class="container">
+				<div class="header-left">
+					<div class="w3layouts-logo">
+						<h1>
+							<a href="index.html">3D <span>Panel</span></a>
+						</h1>
+					</div>
+				</div>
+				<div class="header-right">
+					<p><i class="fa fa-phone" aria-hidden="true"></i>0982 60 1111</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="header-bottom">
+			<div class="container">
+				<div class="top-nav">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav menu">
+								<li><a class="active list-border scroll" href="index.html">Trang Chủ</a></li>
+								<li><a href="#about" class="scroll">Về Chúng Tôi</a></li>
+								<li><a href="#services" class="scroll">Dịch vụ</a></li>
+								<li><a href="#gallery" class="scroll">Môi Trường</a></li>
+								<li class="menu-has-child"><a href="#news" class="scroll">Sản Phẩm</a>
+									<div class="menu-child">
+										<ul>
+											<li><a href="file:///C:/Users/quangvm/tantai/Project/container/web/category.html" class="">Danh sách sản phẩm 1</a></li>
+											<li><a href="file:///C:/Users/quangvm/tantai/Project/container/web/category.html" class="">Danh sách sản phẩm 2</a></li>
+											<li><a href="file:///C:/Users/quangvm/tantai/Project/container/web/category.html" class="">Danh sách sản phẩm 3</a></li>
+											<li><a href="file:///C:/Users/quangvm/tantai/Project/container/web/category.html" class="">Danh sách sản phẩm 4</a></li>
+											<li><a href="file:///C:/Users/quangvm/tantai/Project/container/web/category.html" class="">Danh sách sản phẩm 5</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="menu-has-child"><a href="#contact" class="scroll">Dự Án</a>
+									<div class="menu-child">
+										<ul>
+											<li><a href="file:///C:/Users/quangvm/tantai/Project/container/web/category.html" class="">Dự án Tây Nguyên</a></li>
+											<li><a href="file:///C:/Users/quangvm/tantai/Project/container/web/category.html" class="">Dự án Đông Bắc Bộ</a></li>
+											<li><a href="file:///C:/Users/quangvm/tantai/Project/container/web/category.html" class="">Dự án Tây Bắc Bộ</a></li>
+											<li><a href="file:///C:/Users/quangvm/tantai/Project/container/web/category.html" class="">Dự án Miền Trung</a></li>
+											<li><a href="file:///C:/Users/quangvm/tantai/Project/container/web/category.html" class="">Dự án Miền Nam</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>	
+							<div class="clearfix"></div>
+						</div>	
+					</nav>		
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //banner -->
+	<!-- about -->
+	<div class="about" id="about">
+		<div class="w3-about-top">
+			<h3>V</h3>
+		</div>
+		<div class="w3l-about">
+			<div class="container">
+				<div class="w3ls-heading">
+					<h2>Về chúng tôi</h2>
+				</div>
+				<div class="w3ls-about-info">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit interdum rutrum. Cras tincidunt rhoncus turpis. Nulla elit nibh, vehicula vitae tortor a, fermentum euismod erat. Phasellus vel eros sed sem luctus fringilla sed eleifend eros. Sed et elementum lectus. Aenean ultrices pharetra vestibulum. Praesent a turpis sed nunc auctor vehicula id a sapien. Proin at nulla commodo, pretium enim et, fringilla elit.</p>
+					<div class="w3ls-about-grids">
+						<div class="col-md-12">
+							<div class="col-md-4">
+								<div class="box-about margin-5">
+									<div class="tex-center">
+										<span>
+											<image src="<?php echo e(asset('web/demo/sec_about_image_1.png')); ?>" style="text-align:center"></image>
+										</span>
+									</div>
+									<div class="margin-top-15">
+										<h5 class="title tex-center">Thi Công Xây Dựng</h5>
+										<p class="tex-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit interdum rutrum. Cras tincidunt rhoncus turpis. Nulla elit nibh, vehicula vitae tortor a, fermentum euismod erat.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="box-about margin-5">
+									<div class="tex-center">
+										<span>
+											<image src="<?php echo e(asset('web/demo/sec_about_image_2.png')); ?>" style="text-align:center"></image>
+										</span>
+									</div>
+									<div class="margin-top-15">
+										<h5 class="title tex-center">Thi Công Xây Dựng</h5>
+										<p class="tex-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit interdum rutrum. Cras tincidunt rhoncus turpis. Nulla elit nibh, vehicula vitae tortor a, fermentum euismod erat.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="box-about margin-5">
+									<div class="tex-center">
+										<span>
+											<image src="<?php echo e(asset('web/demo/sec_about_image_3.png')); ?>" style="text-align:center"></image>
+										</span>
+									</div>
+									<div class="margin-top-15">
+										<h5 class="title tex-center">Thi Công Xây Dựng</h5>
+										<p class="tex-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit interdum rutrum. Cras tincidunt rhoncus turpis. Nulla elit nibh, vehicula vitae tortor a, fermentum euismod erat.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 margin-top-15">
+							<div class="col-md-4">
+								<div class="box-about margin-5">
+									<div class="tex-center">
+										<span>
+											<image src="<?php echo e(asset('web/demo/sec_about_image_4.png')); ?>" style="text-align:center"></image>
+										</span>
+									</div>
+									<div class="margin-top-15">
+										<h5 class="title tex-center">Thi Công Xây Dựng</h5>
+										<p class="tex-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit interdum rutrum. Cras tincidunt rhoncus turpis. Nulla elit nibh, vehicula vitae tortor a, fermentum euismod erat.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="box-about margin-5">
+									<div class="tex-center">
+										<span>
+											<image src="<?php echo e(asset('web/demo/sec_about_image_1.png')); ?>" style="text-align:center"></image>
+										</span>
+									</div>
+									<div class="margin-top-15">
+										<h5 class="title tex-center">Thi Công Xây Dựng</h5>
+										<p class="tex-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit interdum rutrum. Cras tincidunt rhoncus turpis. Nulla elit nibh, vehicula vitae tortor a, fermentum euismod erat.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="box-about margin-5">
+									<div class="tex-center">
+										<span>
+											<image src="<?php echo e(asset('web/demo/sec_about_image_2.png')); ?>" style="text-align:center"></image>
+										</span>
+									</div>
+									<div class="margin-top-15">
+										<h5 class="title tex-center">Thi Công Xây Dựng</h5>
+										<p class="tex-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit interdum rutrum. Cras tincidunt rhoncus turpis. Nulla elit nibh, vehicula vitae tortor a, fermentum euismod erat.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="col-md-4"></div>
+							<div class="col-md-4"></div>
+							<div class="col-md-4"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //about -->
+	<!-- services -->
+	<div class="services" id="services">
+		<div class="w3-services-top">
+			<h3>T</h3>
+		</div>
+		<div class="w3l-about w3l-services">
+			<div class="container">
+				<div class="w3ls-heading">
+					<h3>TẠI SAO CHỌN CHÚNG TÔI</h3>
+				</div>
+				<div class="agileits-services-grids">
+					<div class="col-md-4 agileits-services-grid">
+						<i class="fa fa-bus" aria-hidden="true"></i>
+						<h4>Nhanh Chóng</h4>
+						<p>Nullam maximus consequat bibendum. Integer euismod in orci quis tempus. Nunc sed ligula facilisis</p>
+					</div>
+					<div class="col-md-4 agileits-services-grid">
+						<i class="fa fa-credit-card" aria-hidden="true"></i>
+						<h4>Thẩm Mỹ</h4>
+						<p>Nullam maximus consequat bibendum. Integer euismod in orci quis tempus. Nunc sed ligula facilisis</p>
+					</div>
+					<div class="col-md-4 agileits-services-grid">
+						<i class="fa fa-gift" aria-hidden="true"></i>
+						<h4>Tiết Kiệm</h4>
+						<p>Nullam maximus consequat bibendum. Integer euismod in orci quis tempus. Nunc sed ligula facilisis</p>
+					</div>
+					<div class="col-md-4 agileits-services-grid">
+						<i class="fa fa-plane" aria-hidden="true"></i>
+						<h4>An Toàn</h4>
+						<p>Nullam maximus consequat bibendum. Integer euismod in orci quis tempus. Nunc sed ligula facilisis</p>
+					</div>
+					<div class="col-md-4 agileits-services-grid">
+						<i class="fa fa-subway" aria-hidden="true"></i>
+						<h4>Bảo Mật</h4>
+						<p>Nullam maximus consequat bibendum. Integer euismod in orci quis tempus. Nunc sed ligula facilisis</p>
+					</div>
+					<div class="col-md-4 agileits-services-grid">
+						<i class="fa fa-ship" aria-hidden="true"></i>
+						<h4>Uy Tín</h4>
+						<p>Nullam maximus consequat bibendum. Integer euismod in orci quis tempus. Nunc sed ligula facilisis</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //services -->
+	<!-- service number -->
+	<section class="awe-section-4">	
+		<div class="section-service">
+			<div class="container">
+				<div class="section-content">
+					<div class="row">
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="wt-icon-box-wraper">
+								<span class="icon-md">
+									<i class="fa fa-building"></i>
+								</span>
+								<div class="icon-content">
+									<div class="text-black"><span class="counter">1000</span><b>+</b></div>
+									<span class="static-title">Dự án</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="wt-icon-box-wraper">
+								<span class="icon-md">
+									<i class="fa fa-users"></i>
+								</span>
+								<div class="icon-content">
+									<div class="text-black"><span class="counter">1500</span><b>+</b></div>
+									<span class="static-title">Khách hàng</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="wt-icon-box-wraper">
+								<span class="icon-md">
+									<i class="fa fa-user-plus"></i>
+								</span>
+								<div class="icon-content">
+									<div class="text-black"><span class="counter">4500</span><b>+</b></div>
+									<span class="static-title">Nhân viên</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="wt-icon-box-wraper">
+								<span class="icon-md">
+									<i class="fa fa-trophy"></i>
+								</span>
+								<div class="icon-content">
+									<div class="text-black"><span class="counter">250</span><b>+</b></div>
+									<span class="static-title">Giải thưởng</span>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- service number -->
+	<!-- gallery -->
+	<div class="gallery" id="gallery">
+		<div class="w3-gallery-top">
+			<h3>M</h3>
+		</div>
+		<div class="w3l-about w3l-gallery">
+			<div class="container">
+				<div class="w3ls-heading">
+					<h3>Môi trường làm việc</h3>
+				</div>
+				<div class="text-center margin-top-15">
+					<ul class="menu-in-box">
+						<li class="change-color-menu">
+							<a href="javascript:void(0)">Đào tạo nhân viên</a>
+						</li>
+						<li class="change-color-menu">
+							<a href="javascript:void(0)">Cộng tác viên</a>
+						</li>
+						<li class="change-color-menu">
+							<a href="javascript:void(0)">Hoạt động thể thao</a>
+						</li>
+						<li class="change-color-menu">
+							<a href="javascript:void(0)">Chuỗi chi nhánh</a>
+						</li>
+					</ul>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="gallery-grids">
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/g1.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="<?php echo e(asset('web/images/g1.jpg')); ?>" alt="" />
+										<figcaption>
+										</figcaption>	
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/g2.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="<?php echo e(asset('web/images/g2.jpg')); ?>" alt="" />
+										<figcaption>
+										</figcaption>	
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/g3.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="<?php echo e(asset('web/images/g3.jpg')); ?>" alt="" />
+										<figcaption>
+										</figcaption>		
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/g4.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="<?php echo e(asset('web/images/g4.jpg')); ?>" alt="" />
+										<figcaption>
+										</figcaption>	
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/g5.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="<?php echo e(asset('web/images/g5.jpg')); ?>" alt="" />
+										<figcaption>
+										</figcaption>	
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/g6.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="<?php echo e(asset('web/images/g6.jpg')); ?>" alt="" />
+										<figcaption>
+										</figcaption>		
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/g7.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="<?php echo e(asset('web/images/g7.jpg')); ?>" alt="" />
+										<figcaption>
+										</figcaption>	
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/g1.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="<?php echo e(asset('web/images/g1.jpg')); ?>" alt="" />
+										<figcaption>
+										</figcaption>	
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/g2.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="<?php echo e(asset('web/images/g2.jpg')); ?>" alt="" />
+										<figcaption>
+										</figcaption>		
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/g3.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="<?php echo e(asset('web/images/g3.jpg')); ?>" alt="" />
+										<figcaption>
+										</figcaption>		
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/g4.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="<?php echo e(asset('web/images/g4.jpg')); ?>" alt="" />
+										<figcaption>
+										</figcaption>		
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/g5.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="<?php echo e(asset('web/images/g5.jpg')); ?>" alt="" />
+										<figcaption>
+										</figcaption>		
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+						<script src="<?php echo e(asset('web/js/lightbox-plus-jquery.min.js')); ?>"> </script>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //gallery -->
+	<!-- testimonial -->
+	<div class="testimonial">
+		<div class="w3-testimonial-top">
+			<h3>D</h3>
+		</div>
+		<div class="w3l-about w3l-testimonial">
+			<div class="container">
+				<div class="w3ls-heading">
+					<h3>DỰ ÁN</h3>
+				</div>
+				<div class="wthree-news-grids">
+					<div class="col-md-12 agile-news-right-info">
+						<div class="col-sm-6">
+							<img src="<?php echo e(asset('web/demo/duan1.jpg')); ?>" class="with-100">
+						</div>
+						<div class="col-sm-6">
+							<h5 class="title"><a href="#">Dự án nhà đẹp</a></h5>
+							<p class="font-post">Sed accumsan nisl ut ex fermentum, eget sodales eros elementum. Curabitur dapibus placerat quam in vehicula. Morbi fermentum sodales varius.
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<h6><i class="fa fa-calendar" aria-hidden="true"></i> 24th Dec,2016</h6>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="col-md-12 agile-news-right-info margin-top-60">
+						<div class="col-sm-6">
+							<h5 class="title"><a href="#">Dự án nhà container</a></h5>
+							<p class="font-post">Sed accumsan nisl ut ex fermentum, eget sodales eros elementum. Curabitur dapibus placerat quam in vehicula. Morbi fermentum sodales varius.
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<h6><i class="fa fa-calendar" aria-hidden="true"></i> 24th Dec,2016</h6>
+						</div>
+						<div class="col-sm-6">
+							<img src="<?php echo e(asset('web/demo/duan2.jpg')); ?>" class="with-100">
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //testimonial -->
+	<!-- news -->
+	<div class="news" id="news">
+		<div class="w3-news-top">
+			<h3>S</h3>
+		</div>
+		<div class="w3l-about w3l-news">
+			<div class="container">
+				<div class="w3ls-heading">
+					<h3>SẢN PHẨM MỚI NHẤT</h3>
+				</div>
+				<div class="text-center margin-top-15">
+					<ul class="menu-in-box">
+						<li class="change-color-menu">
+							<a href="javascript:void(0)">Thuê nhà Container</a>
+						</li>
+						<li class="change-color-menu">
+							<a href="javascript:void(0)">Thiết kế nhà siêu nhẹ</a>
+						</li>
+						<li class="change-color-menu">
+							<a href="javascript:void(0)">Thuê xe</a>
+						</li>
+					</ul>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="wthree-news-grids">
+					<div class="col-md-4 agile-news-right-info">
+						<div><img src="<?php echo e(asset('web/images/n1.jpg')); ?>" class="with-100"></div>
+						<div class="col-sm-12 agile-news-img-info">
+							<h5><a href="#" data-toggle="modal" data-target="#myModal">Sản phẩm 1</a></h5>
+							<div class="agileits-w3layouts-border"> </div>
+							<p>Sed accumsan nisl ut ex fermentum, eget sodales eros elementum. Curabitur dapibus placerat quam in vehicula. Morbi fermentum sodales varius.</p>
+							<h6><i class="fa fa-calendar" aria-hidden="true"></i> 24th Dec,2016</h6>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="col-md-4 agile-news-right-info">
+						<div><img src="<?php echo e(asset('web/images/n1.jpg')); ?>" class="with-100"></div>
+						<div class="col-sm-12 agile-news-img-info">
+							<h5><a href="#" data-toggle="modal" data-target="#myModal">Sản phẩm 1</a></h5>
+							<div class="agileits-w3layouts-border"> </div>
+							<p>Sed accumsan nisl ut ex fermentum, eget sodales eros elementum. Curabitur dapibus placerat quam in vehicula. Morbi fermentum sodales varius.</p>
+							<h6><i class="fa fa-calendar" aria-hidden="true"></i> 24th Dec,2016</h6>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="col-md-4 agile-news-right-info">
+						<div><img src="<?php echo e(asset('web/images/n1.jpg')); ?>" class="with-100"></div>
+						<div class="col-sm-12 agile-news-img-info">
+							<h5><a href="#" data-toggle="modal" data-target="#myModal">Sản phẩm 1</a></h5>
+							<div class="agileits-w3layouts-border"> </div>
+							<p>Sed accumsan nisl ut ex fermentum, eget sodales eros elementum. Curabitur dapibus placerat quam in vehicula. Morbi fermentum sodales varius.</p>
+							<h6><i class="fa fa-calendar" aria-hidden="true"></i> 24th Dec,2016</h6>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //news -->
+	<!-- team -->
+	<div class="team">
+		<div class="w3-team-top">
+			<h3>T</h3>
+		</div>
+		<div class="w3l-about w3l-team">
+			<div class="container">
+				<div class="w3ls-heading">
+					<h3>THÀNH VIÊN CHỦ CHỐT</h3>
+				</div>
+				<div class="agile-team-grids">
+					<div class="col-sm-3 team-grid">
+						<div class="flip-container">
+							<div class="flipper">
+								<div class="front">
+									<img src="<?php echo e(asset('web/images/t1.jpg')); ?>" alt="" />
+								</div>
+								<div class="back">
+									<h4>Nguyễn Tiến Anh</h4>
+									<p>Giám đốc kỹ thuật </p>
+									<div class="w3l-social">
+										<ul>
+											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+											<li><a href="#"><i class="fa fa-rss"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 team-grid">
+						<div class="flip-container">
+							<div class="flipper">
+								<div class="front">
+									<img src="<?php echo e(asset('web/images/t2.jpg')); ?>" alt="" />
+								</div>
+								<div class="back">
+									<h4>Phan Mạnh Quỳnh</h4>
+									<p>Tổng giám đốc</p>
+									<div class="w3l-social">
+										<ul>
+											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+											<li><a href="#"><i class="fa fa-rss"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 team-grid">
+						<div class="flip-container">
+							<div class="flipper">
+								<div class="front">
+									<img src="<?php echo e(asset('web/images/t3.jpg')); ?>" alt="" />
+								</div>
+								<div class="back">
+									<h4>Hoàng Thị Lan</h4>
+									<p>Kế toán trưởng</p>
+									<div class="w3l-social">
+										<ul>
+											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+											<li><a href="#"><i class="fa fa-rss"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 team-grid">
+						<div class="flip-container">
+							<div class="flipper">
+								<div class="front">
+									<img src="<?php echo e(asset('web/images/t4.jpg')); ?>" alt="" />
+								</div>
+								<div class="back">
+									<h4>Nguyễn Minh Tuần</h4>
+									<p>Phụ Trách Kỹ Thuật</p>
+									<div class="w3l-social">
+										<ul>
+											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+											<li><a href="#"><i class="fa fa-rss"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- //team -->
+	<!-- subscribe -->
+	<div class="subscribe">
+		<div class="w3-subscribe-top">
+			<h3>K</h3>
+		</div>
+		<div class="w3l-about w3l-team">
+			<div class="container">
+				<div class="w3ls-heading">
+					<h3>KHÁCH HÀNG TIÊU BIỂU</h3>
+				</div>
+				<div class="w3-agile-subscribe">
+					<div class="col-sm-6">
+						<img src="<?php echo e(asset('web/demo/khachhang-logo1.png')); ?>" class="width-100">
+					</div>
+					<div class="col-sm-6">
+						<img src="<?php echo e(asset('web/demo/khachhang-logo1.png')); ?>" class="width-100">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //subscribe -->
+	<!-- contact -->
+	<div class="contact" id="contact">
+		<div class="w3-contact-top">
+			<h3>L</h3>
+		</div>
+		<div class="w3l-about w3l-team">
+			<div class="container">
+				<div class="w3ls-heading">
+					<h3>LIÊN HỆ</h3>
+				</div>
+				<div class="agile-contact-grids">
+					<div class="col-md-5 address">
+						<h4>Thông Tin Liên Hệ</h4>
+						<div class="address-row">
+							<div class="col-md-2 w3-agile-address-left">
+								<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+							</div>
+							<div class="col-md-10 w3-agile-address-right">
+								<h5>Địa chỉ</h5>
+								<p>Tòa nhà c5, Khuất Duy Tiến, Hà Nội </p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="address-row">
+							<div class="col-md-2 w3-agile-address-left">
+								<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+							</div>
+							<div class="col-md-10 w3-agile-address-right">
+								<h5>Email</h5>
+								<p><a href="mailto:info@example.com"> mail@example.com</a></p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="address-row">
+							<div class="col-md-2 w3-agile-address-left">
+								<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+							</div>
+							<div class="col-md-10 w3-agile-address-right">
+								<h5>Số điện thoại</h5>
+								<p>0982 60 1111</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="col-md-7 contact-form">
+						<form action="#" method="post">
+							<input type="text" name="First Name" placeholder="Họ" required="">
+							<input class="email" name="Last Name" type="text" placeholder="Tên" required="">
+							<input type="text" name="Number" placeholder="Số điện thoại" required="">
+							<input class="email" name="Email" type="email" placeholder="Email" required="">
+							<textarea name="Message" placeholder="Lời nhắn" required=""></textarea>
+							<input type="submit" value="SUBMIT">
+						</form>
+					</div>
+					<div class="clearfix"> </div>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //contact -->
+	<!-- phone css -->
+	<div id="phone-number">
+		<a id="calltrap-btn" class="b-calltrap-btn calltrap_offline hidden-phone visible-tablet" href="tel:0936307069">
+			<div id="calltrap-ico"></div>
+		</a>
+		<span>024 6681 7070</span>
+	</div>
+	<!-- phone css -->
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="copyright">
+				<p>© 2017 3D Panel . All Rights Reserved | Design by <a href="http://w3layouts.com/"> TanTai</a> </p>
+			</div>
+		</div>
+	</div>
+	<!-- //footer -->
+	<script src="<?php echo e(asset('web/js/responsiveslides.min.js')); ?>"></script>
+	<script src="<?php echo e(asset('web/js/SmoothScroll.min.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(asset('web/js/move-top.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(asset('web/js/easing.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(asset('web/js/my-js.js')); ?>"></script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>	
+</html>

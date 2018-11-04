@@ -14,28 +14,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-<link href="{{ asset('web/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="<?php echo e(asset('web/css/bootstrap.css')); ?>" rel="stylesheet" type="text/css" media="all" />
 <!--// bootstrap-css -->
 <!-- css -->
-<link rel="stylesheet" href="{{ asset('web/css/style.css') }}" type="text/css" media="all" />
+<link rel="stylesheet" href="<?php echo e(asset('web/css/style.css')); ?>" type="text/css" media="all" />
 <!--// css -->
 <!-- font-awesome icons -->
-<link href="{{ asset('web/css/font-awesome.css') }}" rel="stylesheet"> 
+<link href="<?php echo e(asset('web/css/font-awesome.css')); ?>" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <!-- phone style -->
-<link rel="stylesheet" href="{{ asset('web/css/phone-style.css') }}" type="text/css" media="all" />
+<link rel="stylesheet" href="<?php echo e(asset('web/css/phone-style.css')); ?>" type="text/css" media="all" />
 <!-- phone style -->
 <!-- my style css -->
-<link rel="stylesheet" href="{{ asset('web/css/my-style.css') }}" type="text/css" media="all" />
+<link rel="stylesheet" href="<?php echo e(asset('web/css/my-style.css')); ?>" type="text/css" media="all" />
 <!-- my style css -->
 <!-- gallery -->
-<link rel="stylesheet" href="{{ asset('web/css/lightbox.css') }}">
+<link rel="stylesheet" href="<?php echo e(asset('web/css/lightbox.css')); ?>">
 <!-- //gallery -->
 <!-- font -->
 
 <!-- //font -->
-<script src="{{ asset('web/js/jquery-1.11.1.min.js') }}"></script>
-<script src="{{ asset('web/js/bootstrap.js') }}"></script>
+<script src="<?php echo e(asset('web/js/jquery-1.11.1.min.js')); ?>"></script>
+<script src="<?php echo e(asset('web/js/bootstrap.js')); ?>"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -49,19 +49,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <![endif]-->
 </head>
 <body>
-	@include('frontend.partials.banner_top')
+	<?php echo $__env->make('frontend.partials.banner_top', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 	<!-- banner -->
-	@include('frontend.partials.banner')
+	<?php echo $__env->make('frontend.partials.banner', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 	<!-- //banner -->
-	@yield('pages')
+	<?php echo $__env->yieldContent('pages'); ?>
 	<!-- footer -->
-	@include('frontend.partials.footer')
+	<?php echo $__env->make('frontend.partials.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 	<!-- //footer -->
-	<script src="{{ asset('web/js/responsiveslides.min.js') }}"></script>
-	<script src="{{ asset('web/js/SmoothScroll.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('web/js/move-top.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('web/js/easing.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('web/js/my-js.js') }}"></script>
+	<script src="<?php echo e(asset('web/js/responsiveslides.min.js')); ?>"></script>
+	<script src="<?php echo e(asset('web/js/SmoothScroll.min.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(asset('web/js/move-top.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(asset('web/js/easing.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(asset('web/js/my-js.js')); ?>"></script>
 	<!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {

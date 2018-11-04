@@ -15,8 +15,7 @@ use App\SlideType;
 
 class SlideController extends Controller
 {
-    public function index( $id = null)
-	{
+    public function index( $id = null) {
 		if($id == null) return redirect()->route('/admin.home');
 		$slide = DB::table('slide_types')->where('id',$id)->first();
 		if($slide){
@@ -30,7 +29,7 @@ class SlideController extends Controller
 		}
 		
 	}
-	public function addImg($id = null){
+	public function addImg($id = null) {
 		if($id == null) return redirect()->route('admin.home');
 		$slide = DB::table('slide_types')->where('id',$id)->first();
 		
