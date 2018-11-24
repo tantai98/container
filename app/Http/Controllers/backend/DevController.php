@@ -154,7 +154,6 @@ class DevController extends Controller
        return redirect()->back();
     }
     public function addslide(Request $req){
-        dd(1);
         $name = $req->name;
         if(sizeof($name)){
            DB::table('slide_types')->insert(array(

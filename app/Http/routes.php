@@ -18,11 +18,11 @@ Route::get('/category',['as'=>'view.category','uses'=>'frontend\PagesController@
 Route::get('/blog',['as'=>'view.blog','uses'=>'frontend\PagesController@viewblog']);
 Route::get('/cart',['as'=>'view.cart','uses'=>'frontend\PagesController@viewcart']);
 
-Route::get('/pay',['as'=>'view.pay','uses'=>'frontend\PagesController@viewpay']);
 
-Route::get('/oder',['as'=>'get.oder','uses'=>'frontend\PagesController@getOrder']);
 
-Route::get('/shopingcart',['as'=>'get.shoppingcart','uses'=>'frontend\PagesController@getCart']);
+Route::get('/category/',['as'=>'category.posts','uses'=>'PageController@getCategory']);
+Route::get('/product/',['as'=>'product.posts.home','uses'=>'PageController@getCategoryProductHome']);
+
 Route::get('/category/chi-tiet-san-pham/{id}/{slug}',['as'=>'getProDetail','uses'=>'frontend\PagesController@getProDetail']);
 
 Route::get('/category/{id}/{slug}',['as'=>'view.category.products','uses'=>'frontend\PagesController@viewproducts']);

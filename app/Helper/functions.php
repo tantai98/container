@@ -89,4 +89,29 @@ function subMenu($data, $id){
     }
 }
 
+function getMenu(){
+	$menuAll = DB::table('menus')->get();
+	$menuParents = [];
+	foreach ($menuAll as $key => $menu) {
+		if ($menu->parent_id == 0) {
+			array_push($menuParents,$menu);
+			unset($menuAll[$key]);
+		}
+	}
+	
+	$treeMenus[] = [];
+	for ($i= 0; $i < count($menuParents); $i++) { 
+		$treeMenus[$i]['menuParents'] = $menuParents[$i];
+		
+		foreach ($menuAll as $keyMenuAll => $valueMenuAll) {
+			// dd($keyMenuAll);
+			if ($valueMenuAll->parent_id == $treeMenus[$i]['menuParents']->id) {
+				$treeMenus[$i]["child"][$keyMenuAll] = $valueMenuAll;
+			}
+		}
+	}
+	
+   return $treeMenus;
+}
+
 ?>

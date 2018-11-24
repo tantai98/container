@@ -24,7 +24,6 @@ use Doctrine\DBAL\Schema\Table;
 use Doctrine\DBAL\Schema\ForeignKeyConstraint;
 use Doctrine\DBAL\Schema\Sequence;
 use Doctrine\DBAL\Schema\SchemaException;
-use function strlen;
 
 /**
  * Gathers SQL statements that allow to completely drop the current schema.
@@ -51,12 +50,12 @@ class DropSchemaSqlCollector extends AbstractVisitor
     private $tables;
 
     /**
-     * @var AbstractPlatform
+     * @var \Doctrine\DBAL\Platforms\AbstractPlatform
      */
     private $platform;
 
     /**
-     * @param AbstractPlatform $platform
+     * @param \Doctrine\DBAL\Platforms\AbstractPlatform $platform
      */
     public function __construct(AbstractPlatform $platform)
     {
@@ -81,7 +80,8 @@ class DropSchemaSqlCollector extends AbstractVisitor
             throw SchemaException::namedForeignKeyRequired($localTable, $fkConstraint);
         }
 
-        $this->constraints->attach($fkConstraint, $localTable);
+        $this->constraints->attach($fkConstraint);
+        $this->constraints[$fkConstraint] = $localTable;
     }
 
     /**
@@ -107,7 +107,7 @@ class DropSchemaSqlCollector extends AbstractVisitor
      */
     public function getQueries()
     {
-        $sql = [];
+        $sql = array();
 
         foreach ($this->constraints as $fkConstraint) {
             $localTable = $this->constraints[$fkConstraint];

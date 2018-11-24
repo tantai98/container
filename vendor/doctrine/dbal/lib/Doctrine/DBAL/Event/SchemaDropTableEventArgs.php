@@ -21,7 +21,6 @@ namespace Doctrine\DBAL\Event;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Schema\Table;
-use function is_string;
 
 /**
  * Event Arguments used when the SQL query for dropping tables are generated inside Doctrine\DBAL\Platform\AbstractPlatform.
@@ -56,7 +55,7 @@ class SchemaDropTableEventArgs extends SchemaEventArgs
     public function __construct($table, AbstractPlatform $platform)
     {
         if ( ! $table instanceof Table && !is_string($table)) {
-            throw new \InvalidArgumentException('SchemaDropTableEventArgs expects $table parameter to be string or \Doctrine\DBAL\Schema\Table.');
+            throw new \InvalidArgumentException('SchemaCreateTableEventArgs expects $table parameter to be string or \Doctrine\DBAL\Schema\Table.');
         }
 
         $this->_table    = $table;

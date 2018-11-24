@@ -576,7 +576,7 @@ ul.dropdown-menu li{
     position: relative;
     overflow: hidden;
     margin: 10px 0;
-    height: auto;
+    height: 100%;
     text-align: center;
     cursor: pointer;
     border: solid 7px #dbdbdb;

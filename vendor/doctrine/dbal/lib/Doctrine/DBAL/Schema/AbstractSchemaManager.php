@@ -22,19 +22,9 @@ namespace Doctrine\DBAL\Schema;
 use Doctrine\DBAL\Events;
 use Doctrine\DBAL\Event\SchemaColumnDefinitionEventArgs;
 use Doctrine\DBAL\Event\SchemaIndexDefinitionEventArgs;
+use Doctrine\DBAL\Types;
 use Doctrine\DBAL\DBALException;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
-use function array_filter;
-use function array_map;
-use function array_values;
-use function call_user_func_array;
-use function count;
-use function func_get_args;
-use function is_array;
-use function is_null;
-use function preg_match;
-use function str_replace;
-use function strtolower;
 
 /**
  * Base class for schema managers. Schema managers are used to inspect and/or
@@ -105,7 +95,7 @@ abstract class AbstractSchemaManager
         $args = array_values($args);
 
         try {
-            return call_user_func_array([$this, $method], $args);
+            return call_user_func_array(array($this, $method), $args);
         } catch (\Exception $e) {
             return false;
         }
@@ -126,20 +116,6 @@ abstract class AbstractSchemaManager
     }
 
     /**
-     * Returns a list of all namespaces in the current database.
-     *
-     * @return array
-     */
-    public function listNamespaceNames()
-    {
-        $sql = $this->_platform->getListNamespacesSQL();
-
-        $namespaces = $this->_conn->fetchAll($sql);
-
-        return $this->getPortableNamespacesList($namespaces);
-    }
-
-    /**
      * Lists the available sequences for this connection.
      *
      * @param string|null $database
@@ -148,7 +124,7 @@ abstract class AbstractSchemaManager
      */
     public function listSequences($database = null)
     {
-        if ($database === null) {
+        if (is_null($database)) {
             $database = $this->_conn->getDatabase();
         }
         $sql = $this->_platform->getListSequencesSQL($database);
@@ -163,7 +139,7 @@ abstract class AbstractSchemaManager
      *
      * In contrast to other libraries and to the old version of Doctrine,
      * this column definition does try to contain the 'primary' field for
-     * the reason that it is not portable across different RDBMS. Use
+     * the reason that it is not portable accross different RDBMS. Use
      * {@see listTableIndexes($tableName)} to retrieve the primary key
      * of a table. We're a RDBMS specifies more details these are held
      * in the platformDetails array.
@@ -209,11 +185,11 @@ abstract class AbstractSchemaManager
      *
      * @param array $tableNames
      *
-     * @return bool
+     * @return boolean
      */
     public function tablesExist($tableNames)
     {
-        $tableNames = array_map('strtolower', (array) $tableNames);
+        $tableNames = array_map('strtolower', (array)$tableNames);
 
         return count($tableNames) == count(\array_intersect($tableNames, array_map('strtolower', $this->listTableNames())));
     }
@@ -248,10 +224,9 @@ abstract class AbstractSchemaManager
             return $assetNames;
         }
 
-        return array_values(
+        return array_values (
             array_filter($assetNames, function ($assetName) use ($filterExpr) {
                 $assetName = ($assetName instanceof AbstractAsset) ? $assetName->getName() : $assetName;
-
                 return preg_match($filterExpr, $assetName);
             })
         );
@@ -274,7 +249,7 @@ abstract class AbstractSchemaManager
     {
         $tableNames = $this->listTableNames();
 
-        $tables = [];
+        $tables = array();
         foreach ($tableNames as $tableName) {
             $tables[] = $this->listTableDetails($tableName);
         }
@@ -290,13 +265,13 @@ abstract class AbstractSchemaManager
     public function listTableDetails($tableName)
     {
         $columns = $this->listTableColumns($tableName);
-        $foreignKeys = [];
+        $foreignKeys = array();
         if ($this->_platform->supportsForeignKeyConstraints()) {
             $foreignKeys = $this->listTableForeignKeys($tableName);
         }
         $indexes = $this->listTableIndexes($tableName);
 
-        return new Table($tableName, $columns, $indexes, $foreignKeys, false, []);
+        return new Table($tableName, $columns, $indexes, $foreignKeys, false, array());
     }
 
     /**
@@ -323,7 +298,7 @@ abstract class AbstractSchemaManager
      */
     public function listTableForeignKeys($table, $database = null)
     {
-        if ($database === null) {
+        if (is_null($database)) {
             $database = $this->_conn->getDatabase();
         }
         $sql = $this->_platform->getListTableForeignKeysSQL($table, $database);
@@ -351,13 +326,13 @@ abstract class AbstractSchemaManager
     /**
      * Drops the given table.
      *
-     * @param string $tableName The name of the table to drop.
+     * @param string $table The name of the table to drop.
      *
      * @return void
      */
-    public function dropTable($tableName)
+    public function dropTable($table)
     {
-        $this->_execSql($this->_platform->getDropTableSQL($tableName));
+        $this->_execSql($this->_platform->getDropTableSQL($table));
     }
 
     /**
@@ -370,7 +345,7 @@ abstract class AbstractSchemaManager
      */
     public function dropIndex($index, $table)
     {
-        if ($index instanceof Index) {
+        if($index instanceof Index) {
             $index = $index->getQuotedName($this->_platform);
         }
 
@@ -666,7 +641,7 @@ abstract class AbstractSchemaManager
      */
     protected function _getPortableDatabasesList($databases)
     {
-        $list = [];
+        $list = array();
         foreach ($databases as $value) {
             if ($value = $this->_getPortableDatabaseDefinition($value)) {
                 $list[] = $value;
@@ -674,24 +649,6 @@ abstract class AbstractSchemaManager
         }
 
         return $list;
-    }
-
-    /**
-     * Converts a list of namespace names from the native DBMS data definition to a portable Doctrine definition.
-     *
-     * @param array $namespaces The list of namespace names in the native DBMS data definition.
-     *
-     * @return array
-     */
-    protected function getPortableNamespacesList(array $namespaces)
-    {
-        $namespacesList = [];
-
-        foreach ($namespaces as $namespace) {
-            $namespacesList[] = $this->getPortableNamespaceDefinition($namespace);
-        }
-
-        return $namespacesList;
     }
 
     /**
@@ -705,25 +662,13 @@ abstract class AbstractSchemaManager
     }
 
     /**
-     * Converts a namespace definition from the native DBMS data definition to a portable Doctrine definition.
-     *
-     * @param array $namespace The native DBMS namespace definition.
-     *
-     * @return mixed
-     */
-    protected function getPortableNamespaceDefinition(array $namespace)
-    {
-        return $namespace;
-    }
-
-    /**
      * @param array $functions
      *
      * @return array
      */
     protected function _getPortableFunctionsList($functions)
     {
-        $list = [];
+        $list = array();
         foreach ($functions as $value) {
             if ($value = $this->_getPortableFunctionDefinition($value)) {
                 $list[] = $value;
@@ -750,7 +695,7 @@ abstract class AbstractSchemaManager
      */
     protected function _getPortableTriggersList($triggers)
     {
-        $list = [];
+        $list = array();
         foreach ($triggers as $value) {
             if ($value = $this->_getPortableTriggerDefinition($value)) {
                 $list[] = $value;
@@ -777,7 +722,7 @@ abstract class AbstractSchemaManager
      */
     protected function _getPortableSequencesList($sequences)
     {
-        $list = [];
+        $list = array();
         foreach ($sequences as $value) {
             if ($value = $this->_getPortableSequenceDefinition($value)) {
                 $list[] = $value;
@@ -814,7 +759,7 @@ abstract class AbstractSchemaManager
     {
         $eventManager = $this->_platform->getEventManager();
 
-        $list = [];
+        $list = array();
         foreach ($tableColumns as $tableColumn) {
             $column = null;
             $defaultPrevented = false;
@@ -859,23 +804,22 @@ abstract class AbstractSchemaManager
      */
     protected function _getPortableTableIndexesList($tableIndexRows, $tableName=null)
     {
-        $result = [];
-        foreach ($tableIndexRows as $tableIndex) {
+        $result = array();
+        foreach($tableIndexRows as $tableIndex) {
             $indexName = $keyName = $tableIndex['key_name'];
-            if ($tableIndex['primary']) {
+            if($tableIndex['primary']) {
                 $keyName = 'primary';
             }
             $keyName = strtolower($keyName);
 
-            if (!isset($result[$keyName])) {
-                $result[$keyName] = [
+            if(!isset($result[$keyName])) {
+                $result[$keyName] = array(
                     'name' => $indexName,
-                    'columns' => [$tableIndex['column_name']],
+                    'columns' => array($tableIndex['column_name']),
                     'unique' => $tableIndex['non_unique'] ? false : true,
                     'primary' => $tableIndex['primary'],
-                    'flags' => $tableIndex['flags'] ?? [],
-                    'options' => isset($tableIndex['where']) ? ['where' => $tableIndex['where']] : [],
-                ];
+                    'flags' => isset($tableIndex['flags']) ? $tableIndex['flags'] : array(),
+                );
             } else {
                 $result[$keyName]['columns'][] = $tableIndex['column_name'];
             }
@@ -883,8 +827,8 @@ abstract class AbstractSchemaManager
 
         $eventManager = $this->_platform->getEventManager();
 
-        $indexes = [];
-        foreach ($result as $indexKey => $data) {
+        $indexes = array();
+        foreach($result as $indexKey => $data) {
             $index = null;
             $defaultPrevented = false;
 
@@ -897,7 +841,7 @@ abstract class AbstractSchemaManager
             }
 
             if ( ! $defaultPrevented) {
-                $index = new Index($data['name'], $data['columns'], $data['unique'], $data['primary'], $data['flags'], $data['options']);
+                $index = new Index($data['name'], $data['columns'], $data['unique'], $data['primary'], $data['flags']);
             }
 
             if ($index) {
@@ -915,7 +859,7 @@ abstract class AbstractSchemaManager
      */
     protected function _getPortableTablesList($tables)
     {
-        $list = [];
+        $list = array();
         foreach ($tables as $value) {
             if ($value = $this->_getPortableTableDefinition($value)) {
                 $list[] = $value;
@@ -942,7 +886,7 @@ abstract class AbstractSchemaManager
      */
     protected function _getPortableUsersList($users)
     {
-        $list = [];
+        $list = array();
         foreach ($users as $value) {
             if ($value = $this->_getPortableUserDefinition($value)) {
                 $list[] = $value;
@@ -964,12 +908,11 @@ abstract class AbstractSchemaManager
 
     /**
      * @param array $views
-     *
      * @return array
      */
     protected function _getPortableViewsList($views)
     {
-        $list = [];
+        $list = array();
         foreach ($views as $value) {
             if ($view = $this->_getPortableViewDefinition($value)) {
                 $viewName = strtolower($view->getQuotedName($this->_platform));
@@ -997,7 +940,7 @@ abstract class AbstractSchemaManager
      */
     protected function _getPortableTableForeignKeysList($tableForeignKeys)
     {
-        $list = [];
+        $list = array();
         foreach ($tableForeignKeys as $value) {
             if ($value = $this->_getPortableTableForeignKeyDefinition($value)) {
                 $list[] = $value;
@@ -1036,21 +979,13 @@ abstract class AbstractSchemaManager
      */
     public function createSchema()
     {
-        $namespaces = [];
-
-        if ($this->_platform->supportsSchemas()) {
-            $namespaces = $this->listNamespaceNames();
-        }
-
-        $sequences = [];
-
-        if ($this->_platform->supportsSequences()) {
+        $sequences = array();
+        if($this->_platform->supportsSequences()) {
             $sequences = $this->listSequences();
         }
-
         $tables = $this->listTables();
 
-        return new Schema($tables, $sequences, $this->createSchemaConfig(), $namespaces);
+        return new Schema($tables, $sequences, $this->createSchemaConfig());
     }
 
     /**
@@ -1069,13 +1004,9 @@ abstract class AbstractSchemaManager
         }
 
         $params = $this->_conn->getParams();
-        if (! isset($params['defaultTableOptions'])) {
-            $params['defaultTableOptions'] = [];
+        if (isset($params['defaultTableOptions'])) {
+            $schemaConfig->setDefaultTableOptions($params['defaultTableOptions']);
         }
-        if (! isset($params['defaultTableOptions']['charset']) && isset($params['charset'])) {
-            $params['defaultTableOptions']['charset'] = $params['charset'];
-        }
-        $schemaConfig->setDefaultTableOptions($params['defaultTableOptions']);
 
         return $schemaConfig;
     }
@@ -1094,7 +1025,7 @@ abstract class AbstractSchemaManager
      */
     public function getSchemaSearchPaths()
     {
-        return [$this->_conn->getDatabase()];
+        return array($this->_conn->getDatabase());
     }
 
     /**
@@ -1108,7 +1039,7 @@ abstract class AbstractSchemaManager
      */
     public function extractDoctrineTypeFromComment($comment, $currentType)
     {
-        if (preg_match("(\(DC2Type:(((?!\)).)+)\))", $comment, $match)) {
+        if (preg_match("(\(DC2Type:([a-zA-Z0-9_]+)\))", $comment, $match)) {
             $currentType = $match[1];
         }
 

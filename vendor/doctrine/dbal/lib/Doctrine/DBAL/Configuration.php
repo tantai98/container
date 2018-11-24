@@ -40,7 +40,7 @@ class Configuration
      *
      * @var array
      */
-    protected $_attributes = [];
+    protected $_attributes = array();
 
     /**
      * Sets the SQL logger to use. Defaults to NULL which means SQL logging is disabled.
@@ -57,11 +57,12 @@ class Configuration
     /**
      * Gets the SQL logger that is used.
      *
-     * @return \Doctrine\DBAL\Logging\SQLLogger|null
+     * @return \Doctrine\DBAL\Logging\SQLLogger
      */
     public function getSQLLogger()
     {
-        return $this->_attributes['sqlLogger'] ?? null;
+        return isset($this->_attributes['sqlLogger']) ?
+                $this->_attributes['sqlLogger'] : null;
     }
 
     /**
@@ -71,7 +72,8 @@ class Configuration
      */
     public function getResultCacheImpl()
     {
-        return $this->_attributes['resultCacheImpl'] ?? null;
+        return isset($this->_attributes['resultCacheImpl']) ?
+                $this->_attributes['resultCacheImpl'] : null;
     }
 
     /**
@@ -109,34 +111,10 @@ class Configuration
      */
     public function getFilterSchemaAssetsExpression()
     {
-        return $this->_attributes['filterSchemaAssetsExpression'] ?? null;
-    }
+        if (isset($this->_attributes['filterSchemaAssetsExpression'])) {
+            return $this->_attributes['filterSchemaAssetsExpression'];
+        }
 
-    /**
-     * Sets the default auto-commit mode for connections.
-     *
-     * If a connection is in auto-commit mode, then all its SQL statements will be executed and committed as individual
-     * transactions. Otherwise, its SQL statements are grouped into transactions that are terminated by a call to either
-     * the method commit or the method rollback. By default, new connections are in auto-commit mode.
-     *
-     * @param bool $autoCommit True to enable auto-commit mode; false to disable it.
-     *
-     * @see   getAutoCommit
-     */
-    public function setAutoCommit($autoCommit)
-    {
-        $this->_attributes['autoCommit'] = (boolean) $autoCommit;
-    }
-
-    /**
-     * Returns the default auto-commit mode for connections.
-     *
-     * @return bool True if auto-commit mode is enabled by default for connections, false otherwise.
-     *
-     * @see    setAutoCommit
-     */
-    public function getAutoCommit()
-    {
-        return $this->_attributes['autoCommit'] ?? true;
+        return null;
     }
 }

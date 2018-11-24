@@ -9,156 +9,29 @@
 			</div>
 			<div class="text-center margin-top-15">
 				<ul class="menu-in-box">
+					@foreach($categorieChilds as $categorieChild)
 					<li class="change-color-menu">
-						<a href="javascript:void(0)">Đào tạo nhân viên</a>
+						<a href="javascript:void(0)" data-id="{{ $categorieChild->id }}">{{ $categorieChild->name }}</a>
 					</li>
-					<li class="change-color-menu">
-						<a href="javascript:void(0)">Cộng tác viên</a>
-					</li>
-					<li class="change-color-menu">
-						<a href="javascript:void(0)">Hoạt động thể thao</a>
-					</li>
-					<li class="change-color-menu">
-						<a href="javascript:void(0)">Chuỗi chi nhánh</a>
-					</li>
+					@endforeach
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
-			<div class="gallery-grids">
-					<div class="col-md-3 gallery-grid">
-						<div class="grid">
+			<div class="gallery-grids" id="post_env">
+					@foreach($posts as $post)
+					<div class="col-md-3 gallery-grid height-env">
+						<div class="grid height-100">
 							<figure class="effect-apollo">
-								<a class="example-image-link" href="images/g1.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-									<img src="{{ asset('web/images/g1.jpg') }}" alt="" />
+								<a class="example-image-link" href="{{ route('frontend.bai-viet.slug',['id'=>$post->id,'slug'=>$post->slug]) }}" data-lightbox="example-set" data-title="$post->title" target="_blank">
+									<img src="{{ asset($post->img) }}" alt="" />
 									<figcaption>
 									</figcaption>	
 								</a>
 							</figure>
 						</div>
 					</div>
-					<div class="col-md-3 gallery-grid">
-						<div class="grid">
-							<figure class="effect-apollo">
-								<a class="example-image-link" href="images/g2.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-									<img src="{{ asset('web/images/g2.jpg') }}" alt="" />
-									<figcaption>
-									</figcaption>	
-								</a>
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<div class="grid">
-							<figure class="effect-apollo">
-								<a class="example-image-link" href="images/g3.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-									<img src="{{ asset('web/images/g3.jpg') }}" alt="" />
-									<figcaption>
-									</figcaption>		
-								</a>
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<div class="grid">
-							<figure class="effect-apollo">
-								<a class="example-image-link" href="images/g4.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-									<img src="{{ asset('web/images/g4.jpg') }}" alt="" />
-									<figcaption>
-									</figcaption>	
-								</a>
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<div class="grid">
-							<figure class="effect-apollo">
-								<a class="example-image-link" href="images/g5.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-									<img src="{{ asset('web/images/g5.jpg') }}" alt="" />
-									<figcaption>
-									</figcaption>	
-								</a>
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<div class="grid">
-							<figure class="effect-apollo">
-								<a class="example-image-link" href="images/g6.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-									<img src="{{ asset('web/images/g6.jpg') }}" alt="" />
-									<figcaption>
-									</figcaption>		
-								</a>
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<div class="grid">
-							<figure class="effect-apollo">
-								<a class="example-image-link" href="images/g7.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-									<img src="{{ asset('web/images/g7.jpg') }}" alt="" />
-									<figcaption>
-									</figcaption>	
-								</a>
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<div class="grid">
-							<figure class="effect-apollo">
-								<a class="example-image-link" href="images/g1.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-									<img src="{{ asset('web/images/g1.jpg') }}" alt="" />
-									<figcaption>
-									</figcaption>	
-								</a>
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<div class="grid">
-							<figure class="effect-apollo">
-								<a class="example-image-link" href="images/g2.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-									<img src="{{ asset('web/images/g2.jpg') }}" alt="" />
-									<figcaption>
-									</figcaption>		
-								</a>
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<div class="grid">
-							<figure class="effect-apollo">
-								<a class="example-image-link" href="images/g3.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-									<img src="{{ asset('web/images/g3.jpg') }}" alt="" />
-									<figcaption>
-									</figcaption>		
-								</a>
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<div class="grid">
-							<figure class="effect-apollo">
-								<a class="example-image-link" href="images/g4.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-									<img src="{{ asset('web/images/g4.jpg') }}" alt="" />
-									<figcaption>
-									</figcaption>		
-								</a>
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<div class="grid">
-							<figure class="effect-apollo">
-								<a class="example-image-link" href="images/g5.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
-									<img src="{{ asset('web/images/g5.jpg') }}" alt="" />
-									<figcaption>
-									</figcaption>		
-								</a>
-							</figure>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-					<script src="{{ asset('web/js/lightbox-plus-jquery.min.js') }}"> </script>
+					@endforeach
+					<div class="clearfix"></div>
 			</div>
 		</div>
 	</div>

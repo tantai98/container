@@ -5,53 +5,31 @@
 	<div class="w3l-about w3l-news">
 		<div class="container">
 			<div class="w3ls-heading">
-				<h3>SẢN PHẨM MỚI NHẤT</h3>
+				<h3>SẢN PHẨM</h3>
 			</div>
 			<div class="text-center margin-top-15">
 				<ul class="menu-in-box">
-					<li class="change-color-menu">
-						<a href="javascript:void(0)">Thuê nhà Container</a>
+					@foreach($categoryProducts as $categoryProduct)
+					<li class="change-color-menu-product">
+						<a href="javascript:void(0)" id-cate="{{ $categoryProduct->id }}">{{ $categoryProduct->name }}</a>
 					</li>
-					<li class="change-color-menu">
-						<a href="javascript:void(0)">Thiết kế nhà siêu nhẹ</a>
-					</li>
-					<li class="change-color-menu">
-						<a href="javascript:void(0)">Thuê xe</a>
-					</li>
+					@endforeach
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
-			<div class="wthree-news-grids">
+			<div class="wthree-news-grids" id="post_pro">
+				@foreach($products as $product)
 				<div class="col-md-4 agile-news-right-info">
-					<div><img src="{{ asset('web/images/n1.jpg') }}" class="with-100"></div>
+					<div><img src="{{ asset($product->img) }}" class="with-100 height-img-pro"></div>
 					<div class="col-sm-12 agile-news-img-info">
-						<h5><a href="#" data-toggle="modal" data-target="#myModal">Sản phẩm 1</a></h5>
+						<h5><a href="{{ route('frontend.san-pham.slug',['id'=>$product->id,'slug'=>$product->slug]) }}">{{ $product->name }}</a></h5>
 						<div class="agileits-w3layouts-border"> </div>
-						<p>Sed accumsan nisl ut ex fermentum, eget sodales eros elementum. Curabitur dapibus placerat quam in vehicula. Morbi fermentum sodales varius.</p>
+						<p>{{ $product->short_description }}</p>
 						<h6><i class="fa fa-calendar" aria-hidden="true"></i> 24th Dec,2016</h6>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
-				<div class="col-md-4 agile-news-right-info">
-					<div><img src="{{ asset('web/images/n1.jpg') }}" class="with-100"></div>
-					<div class="col-sm-12 agile-news-img-info">
-						<h5><a href="#" data-toggle="modal" data-target="#myModal">Sản phẩm 1</a></h5>
-						<div class="agileits-w3layouts-border"> </div>
-						<p>Sed accumsan nisl ut ex fermentum, eget sodales eros elementum. Curabitur dapibus placerat quam in vehicula. Morbi fermentum sodales varius.</p>
-						<h6><i class="fa fa-calendar" aria-hidden="true"></i> 24th Dec,2016</h6>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 agile-news-right-info">
-					<div><img src="{{ asset('web/images/n1.jpg') }}" class="with-100"></div>
-					<div class="col-sm-12 agile-news-img-info">
-						<h5><a href="#" data-toggle="modal" data-target="#myModal">Sản phẩm 1</a></h5>
-						<div class="agileits-w3layouts-border"> </div>
-						<p>Sed accumsan nisl ut ex fermentum, eget sodales eros elementum. Curabitur dapibus placerat quam in vehicula. Morbi fermentum sodales varius.</p>
-						<h6><i class="fa fa-calendar" aria-hidden="true"></i> 24th Dec,2016</h6>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
+				@endforeach
 				<div class="clearfix"> </div>
 			</div>
 		</div>

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class CategoryProduct extends Model
 {
@@ -31,5 +32,8 @@ class CategoryProduct extends Model
     public function getsubcate(){
 
     	return $this->hasMany('App\ProductInCategory', 'cate_pro_id');
+    }
+    public static function getCateHome() {
+        return DB::table("category_products")->orderby("created_at")->limit(6)->get();
     }
 }

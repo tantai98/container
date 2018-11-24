@@ -29,7 +29,23 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav menu">
-							<li><a class="active list-border scroll" href="index.html">Trang Chủ</a></li>
+							<?php foreach($menus as $keyMenu => $valueMenu): ?>
+								<li class="<?php if(isset($valueMenu['child']) && count($valueMenu['child']) > 0): ?> menu-has-child <?php endif; ?>">
+									<a class="<?php if($keyMenu == 0): ?> active list-border <?php endif; ?> scroll" href="index.html"><?php echo e($valueMenu['menuParents']->name); ?></a>
+									<?php if(isset($valueMenu['child']) && count($valueMenu['child']) > 0): ?>
+									<div class="menu-child">
+										<ul>
+											<?php foreach($valueMenu['child'] as $childMenu): ?>
+											<li>
+												<a href="" class=""><?php echo e($childMenu->name); ?></a>
+											</li>
+											<?php endforeach; ?>
+										</ul>
+									</div>
+									<?php endif; ?>
+								</li>
+							<?php endforeach; ?>
+							<!-- <li><a class="active list-border scroll" href="index.html">Trang Chủ</a></li>
 							<li><a href="#about" class="scroll">Về Chúng Tôi</a></li>
 							<li><a href="#services" class="scroll">Dịch vụ</a></li>
 							<li><a href="#gallery" class="scroll">Môi Trường</a></li>
@@ -54,7 +70,7 @@
 										<li><a href="file:///C:/Users/quangvm/tantai/Project/container/web/category.html" class="">Dự án Miền Nam</a></li>
 									</ul>
 								</div>
-							</li>
+							</li> -->
 						</ul>	
 						<div class="clearfix"></div>
 					</div>	

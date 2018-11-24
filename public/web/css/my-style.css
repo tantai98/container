@@ -1,14 +1,30 @@
 /* with */
 .with-100 {
-	width: 100%
+	width: 100%;
+}
+.height-100 {
+    height: 100%;
+}
+
+.height-env {
+    height: 235px;
+}
+.height-img-pro {
+    height: 253px;
+}
+.height-project {
+    height: 300px;
 }
 
 /* margin padding */
 .margin-top-15 {
-	margin-top: 15px
+	margin-top: 15px;
 }
 .margin-top-60 {
-	margin-top: 60px
+	margin-top: 60px;
+}
+.margin-bot-60 {
+    margin-bottom: 60px;
 }
 .margin-top-bot-10 {
 	margin: 10px 0px;

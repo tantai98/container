@@ -20,24 +20,24 @@ body{
 }
 /*-- banner-top --*/
 .w3layouts-banner-top{
-    background: url(../images/1.jpg) no-repeat 0px 0px;
+    background: url(http://localhost/container/public/assets/slide/5bf2c55a6bcf1-19-11-2018.3.jpg) no-repeat 0px 0px;
     background-size: cover;
 }
 .w3layouts-banner-top1{
-	background: url(../images/2.jpg) no-repeat 0px 0px;
+	/*background: url(../images/2.jpg) no-repeat 0px 0px;*/
     background-size: cover;	
 }
 .w3layouts-banner-top2{
-	background: url(../images/3.jpg) no-repeat 0px 0px;
+	/*background: url(../images/3.jpg) no-repeat 0px 0px;*/
     background-size: cover;	
 }
 .w3layouts-banner-top3{
-	background: url(../images/4.jpg) no-repeat 0px 0px;
+	/*background: url(../images/4.jpg) no-repeat 0px 0px;*/
     background-size: cover;	
 }
 .w3layouts-banner-top4{
-	background: url(../images/5.jpg) no-repeat 0px 0px;
-    background-size: cover;	
+	/*background: url(../images/5.jpg) no-repeat 0px 0px;*/
+    /*background-size: cover;	*/
 }
 /*-- //banner-top --*/
 /*-- banner --*/

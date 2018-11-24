@@ -22,7 +22,7 @@ namespace Doctrine\DBAL\Platforms\Keywords;
 /**
  * Drizzle Keywordlist.
  *
- * @author Kim Hemsø Rasmussen <kimhemsoe@gmail.com>
+ * @author Kim Hemsø Rasmussen <kimhemsoe@gmail.com> 
  */
 class DrizzleKeywords extends KeywordList
 {
@@ -39,7 +39,7 @@ class DrizzleKeywords extends KeywordList
      */
     protected function getKeywords()
     {
-        return [
+        return array(
             'ABS',
             'ALL',
             'ALLOCATE',
@@ -340,6 +340,6 @@ class DrizzleKeywords extends KeywordList
             'XMLROOT',
             'XMLSERIALIZE',
             'YEAR',
-        ];
+        );
     }
 }

@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use DB;
 
 class Product extends Model 
 {
@@ -152,5 +152,24 @@ class Product extends Model
         } catch (Exception $e) {
             return false;
         }
+    }
+
+    public static function getProductHomeByCategory($idCate) {
+        return DB::table("product_category")
+            ->where("product_category.cate_pro_id", $idCate)
+            ->leftJoin("products", "product_category.product_id", "=", "products.id")
+            ->limit(3)->orderBy('products.created_at')->get();
+    }
+
+    public static function getProductHome() {
+        return DB::table("product_category")
+            ->leftJoin("products", "product_category.product_id", "=", "products.id")
+            ->limit(3)->orderBy('products.created_at')->get();
+    }
+
+    public static function getProductById($id) {
+        return DB::table('products')->where('products.id',$id)
+            ->leftJoin('content_products','products.id','=','content_products.product_id')
+            ->first();
     }
 }

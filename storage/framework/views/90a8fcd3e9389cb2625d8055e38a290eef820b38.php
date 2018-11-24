@@ -3,41 +3,31 @@
 		<div class="callbacks_container">
 			<ul class="rslides callbacks callbacks1" id="slider4">
 				<li>
-					<div class="w3layouts-banner-top">
+					<div style="background: url(<?php echo e(url($banner[0]->img_1)); ?>) no-repeat 0px 0px;background-size: cover;">
 						<div class="container">
 							<div class="agileits-banner-info">
-								<h3>C</h3>
-								<h4>Chất Lượng</h4>
+								<h3><?php echo e(substr($banner[0]->text_1, 0, 1)); ?></h3>
+								<h4><?php echo e($banner[0]->text_1); ?></h4>
 							</div>	
 						</div>
 					</div>
 				</li>
 				<li>
-					<div class="w3layouts-banner-top w3layouts-banner-top1">
+					<div style="background: url(<?php echo e(url($banner[0]->img_2)); ?>) no-repeat 0px 0px;background-size: cover;">
 						<div class="container">
 							<div class="agileits-banner-info1">
-								<h3>U</h3>
-								<h4>Uy Tín</h4>
+								<h3><?php echo e(substr($banner[0]->text_2, 0, 1)); ?></h3>
+								<h4><?php echo e($banner[0]->text_2); ?></h4>
 							</div>
 						</div>
 					</div>
 				</li>
 				<li>
-					<div class="w3layouts-banner-top w3layouts-banner-top2">
+					<div style="background: url(<?php echo e(url($banner[0]->img_3)); ?>) no-repeat 0px 0px;background-size: cover;">
 						<div class="container">
 							<div class="agileits-banner-info2">
-								<h3>N</h3>
-								<h4>Nhanh Chóng</h4>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="w3layouts-banner-top w3layouts-banner-top3">
-						<div class="container">
-							<div class="agileits-banner-info3">
-								<h3>B</h3>
-								<h4>Bảo Mật</h4>
+								<h3><?php echo e(substr($banner[0]->text_3, 0, 1)); ?></h3>
+								<h4><?php echo e($banner[0]->text_3); ?></h4>
 							</div>
 						</div>
 					</div>

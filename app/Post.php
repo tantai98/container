@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Post extends Model
 {  
@@ -142,5 +143,25 @@ class Post extends Model
         } catch (Exception $e) {
             return false;
         }
+    }
+    public static function getIDCate($slug) {
+        return DB::table('categories')
+         ->where("prefix",$slug)
+         ->first();
+    }
+    public static function getPostByCategoryParent($idParent) {
+        return DB::table('categories')
+         ->select("posts.id","posts.img","posts.title","posts.slug","posts.description")
+         ->leftJoin('post_category','categories.id','=','post_category.category_id')
+         ->leftJoin('posts',"post_category.post_id",'=','posts.id')
+         ->where('categories.parent_id',$idParent)
+         ->distinct()
+         ->get();
+    }
+
+    public static function getCategoryByParentId($idParent) {
+        return DB::table('categories')
+         ->where("parent_id", $idParent)
+         ->get();
     }
 }

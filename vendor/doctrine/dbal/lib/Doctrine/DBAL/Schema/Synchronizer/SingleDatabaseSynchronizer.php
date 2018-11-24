@@ -23,7 +23,6 @@ use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\DBAL\Schema\Comparator;
 use Doctrine\DBAL\Schema\Visitor\DropSchemaSqlCollector;
-use function count;
 
 /**
  * Schema Synchronizer for Default DBAL Connection.
@@ -84,7 +83,7 @@ class SingleDatabaseSynchronizer extends AbstractSchemaSynchronizer
         $fullSchema = $sm->createSchema();
 
         foreach ($fullSchema->getTables() as $table) {
-            if ($dropSchema->hasTable($table->getName())) {
+            if ( $dropSchema->hasTable($table->getName())) {
                 $visitor->acceptTable($table);
             }
 

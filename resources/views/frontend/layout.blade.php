@@ -1,9 +1,9 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+@php
+	$banner = DB::table('slides')
+         ->where('type','Banner')
+         ->where('status',1)->get();
+    $menus = getMenu();
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +61,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="{{ asset('web/js/SmoothScroll.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('web/js/move-top.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('web/js/easing.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('web/js/my-js.js') }}"></script>
 	<!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -78,6 +77,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								
 			});
 	</script>
+	<script type="text/javascript">
+		var urlEnv = "{{ route('category.posts') }}";
+		var urlProduct = "{{ route('product.posts.home') }}"
+	</script>
+	<script type="text/javascript" src="{{ asset('web/js/my-js.js') }}"></script>
 <!-- //here ends scrolling icon -->
 </body>	
 </html>
