@@ -169,7 +169,15 @@ class Product extends Model
 
     public static function getProductById($id) {
         return DB::table('products')->where('products.id',$id)
+            ->select('products.*','content_products.content')
             ->leftJoin('content_products','products.id','=','content_products.product_id')
             ->first();
+    }
+
+    public static function getProductByCategory($idCate) {
+        return DB::table("product_category")
+            ->where("product_category.cate_pro_id", $idCate)
+            ->leftJoin("products", "product_category.product_id", "=", "products.id")
+            ->orderBy('products.created_at')->paginate(12);
     }
 }

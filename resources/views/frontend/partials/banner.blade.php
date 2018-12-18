@@ -4,7 +4,7 @@
 			<div class="header-left">
 				<div class="w3layouts-logo">
 					<h1>
-						<a href="index.html">3D <span>Panel</span></a>
+						<a href="{{ route('frontend.trang-chu') }}">3D <span>Panel</span></a>
 					</h1>
 				</div>
 			</div>
@@ -31,13 +31,13 @@
 						<ul class="nav navbar-nav menu">
 							@foreach($menus as $keyMenu => $valueMenu)
 								<li class="@if(isset($valueMenu['child']) && count($valueMenu['child']) > 0) menu-has-child @endif">
-									<a class="@if($keyMenu == 0) active list-border @endif scroll" href="index.html">{{ $valueMenu['menuParents']->name }}</a>
+									<a class="@if($keyMenu == 0) active list-border @endif scroll" href="">{{ $valueMenu['menuParents']->name }}</a>
 									@if(isset($valueMenu['child']) && count($valueMenu['child']) > 0)
 									<div class="menu-child">
 										<ul>
 											@foreach($valueMenu['child'] as $childMenu)
 											<li>
-												<a href="" class="">{{ $childMenu->name }}</a>
+												<a href="{{route('frontend.trang-chu').'/'.$childMenu->link }}" class="">{{ $childMenu->name }}</a>
 											</li>
 											@endforeach
 										</ul>

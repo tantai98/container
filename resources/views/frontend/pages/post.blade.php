@@ -10,7 +10,7 @@
                         <a itemprop="url" href="/" title="Trang chủ"><span itemprop="title">Trang chủ</span></a>						
                         <span><i class="fa fa-angle-right"></i></span>
                     </li>
-                    <li><strong><span itemprop="title">Danh sách sản phẩm 1</span></strong></li>
+                    <li><strong><span itemprop="title">Chi tiết bài viết</span></strong></li>
                 </ul>
             </div>
         </div>
@@ -20,24 +20,21 @@
 <div class="w3l-about w3l-news">
 	<div class="container">
 		<div class="wthree-news-grids col-md-9">
-			{!! $post->content !!}
+            <div><h1>{{ $post->title }}</h1></div>
+            <div>{!! $post->content !!}</div>
 		</div>
 		<!-- slide bar -->
 		<div class="col-lg-3 col-md-8 col-12">
             <div class="shop_sidebar">
                 <div class="sidebar_widget mb-50">
                     <div class="widget_title">
-                        <h3>Danh mục sản phẩm</h3>
+                        <h3>Danh mục bài viết</h3>
                     </div>
                     <div class="widget_categories">
                        <ul>
-                            <li><a href="#">Danh mục 1<span class="caet_count">(6)</span></a></li>
-                            <li><a href="#">Danh mục 2<span class="caet_count">(8)</span></a></li>
-                            <li><a href="#">Danh mục 3<span class="caet_count">(7)</span></a></li>
-                            <li><a href="#">Danh mục 4<span class="caet_count">(10)</span></a></li>
-                            <li><a href="#">Danh mục 5<span class="caet_count">(5)</span></a></li>
-                            <li><a href="#">Danh mục 6<span class="caet_count">(12)</span></a></li>
-                            <li><a href="#">Danh mục 7<span class="caet_count">(15)</span></a></li>
+                            @foreach($cate as $value)
+                            <li><a href="{{ route('getPostCategory',['slug' => $value->prefix]) }}">{{ $value->name }}<span class="caet_count">({{ $value->total }})</span></a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

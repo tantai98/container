@@ -29,3 +29,25 @@ $(document).on('click','.change-color-menu-product', function(){
         dataType:'json'
     });
 })
+
+
+$("#contact-form").submit(function(event) {
+    var datastring = $("#contact-form").serialize();
+   
+    /* stop form from submitting normally */
+    event.preventDefault();
+   $.ajax({
+        type: "POST",
+        url: urlContact,
+        data: datastring,
+        success: function(data) {
+            if(data.status == true) {
+                $('.modal').modal('show');
+            }
+        }
+    });
+});
+
+$("#close").on('click',function(){
+    $('.modal').modal('hide');
+})

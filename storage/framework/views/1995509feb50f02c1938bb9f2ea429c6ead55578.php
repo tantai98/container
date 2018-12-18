@@ -42,7 +42,8 @@
 					</div>
 				</div>
 				<div class="col-md-7 contact-form">
-					<form action="#" method="post">
+					<form action="#" method="post" id="contact-form">
+						<input type="hidden" name="_token" id="csrf-token" value="<?php echo e(Session::token()); ?>" />
 						<input type="text" name="First Name" placeholder="Họ" required="">
 						<input class="email" name="Last Name" type="text" placeholder="Tên" required="">
 						<input type="text" name="Number" placeholder="Số điện thoại" required="">

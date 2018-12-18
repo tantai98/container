@@ -12,7 +12,7 @@ use Session;
 use Redirect;
 use DB;
 use App;
-
+use Carbon\Carbon;
 
 class PageController extends Controller {
 
@@ -27,7 +27,6 @@ class PageController extends Controller {
       // get infor category category product
       $categoryProducts = App\CategoryProduct::getCateHome();
       $products = App\Product::getProductHome();
-
       return view('frontend.pages.home',compact(
          "posts",
          "categorieChilds",
@@ -45,10 +44,14 @@ class PageController extends Controller {
    }
 
    public function getBaiViet($id = null, $slug =null) {
-      
+      $cate = DB::table('post_category')
+         ->select('categories.*',DB::raw('count(post_id) as total'))
+         ->leftJoin('categories','categories.id','=','post_category.category_id')
+         ->groupBy('category_id')->get();
+
       $post = DB::table('posts')->where('posts.id',$id)
          ->leftJoin('contents','posts.id','=','contents.post_id')->first();
-      return view('frontend.pages.post',compact('post'));
+      return view('frontend.pages.post',compact('post','cate'));
    }
 
    public function getCategoryProductHome(Request $request) {
@@ -64,43 +67,44 @@ class PageController extends Controller {
    		
    }
    public function getDanhmucSanpham($slug =null){
-		
+      $id = DB::table('category_products')->where('prefix',$slug)->first();
+      $products = App\Product::getProductByCategory($id->id);
+	  return view('frontend.pages.category',compact('products'));
    }
    public function Filter(Request $req){
    		
    }
-
-
-   public function getChitietSanpham($id = null){
-   }
    public function getChitietSanphamSlug($id = null, $slug =null){
-      // dd($id,$slug);
+      $cate = DB::table('category_products')
+         ->select('category_products.*',DB::raw('count(product_id) as total'))
+         ->join('product_category','category_products.id','=','product_category.cate_pro_id')
+         ->groupBy('cate_pro_id')->get();
       $products = App\Product::getProductById($id);
-      return view('frontend.pages.product',compact('products'));
+      return view('frontend.pages.product',compact('products','cate'));
    }
-   public function getGiohang(){
-   }
-	public function getProductAjax(Request $req){
-	}
-	public function addCart(Request $req){
-	
-	}
-	public function removeCart(Request $req){
-		
-	}
-	public function orderProduct(Request $req){
-		
-	}
-	public function tuvanSanpham(Request $req){
-		
-	}
-	public function dangkyuudai(Request $req){
+   public function ajaxContact(Request $request){
+      $data = $request->all();
+      DB::table('customers')->insert(
+         [
+            'name' => $data['First_Name'].$data['Last_Name'], 
+            'email' => $data['Email'],
+            'phone' => $data['Number'],
+            'nameCompany' => $data['Message'],
+            'created_at' => Carbon::now(),
+         ]
+      );
 
-	}
-	public function addCommentToPost(Request $req){
-		 
-	}
-	public function getAjaxCommentProduct(Request $req){
-	
-	}
+      return response(['status'=>true]);
+   }
+
+   public function customerContact() {
+      $customer = DB::table('customers')->get();
+      return view('backend.customer.listCustomer',compact('customer'));
+   }
+
+   public function getPostCategory($slug = null) {
+      $idCategorie = App\Post::getIDCate($slug);
+      $posts = App\Post::getPostByCategory($idCategorie->id);
+      return view('frontend.pages.category_post',compact('posts'));
+   }
 }

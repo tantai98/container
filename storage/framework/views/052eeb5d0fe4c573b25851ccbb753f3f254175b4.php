@@ -199,28 +199,14 @@
         </ul>
     </li>
     <?php endif; ?>
-    <?php if(session('admin')->can(['xem_lien_he'])): ?>
     <li>
-      <a>
-        <span class="nav-caret">
-          <i class="fa fa-caret-down"></i>
-        </span>
-       
+      <a href="<?php echo e(route('customerContact')); ?>">
         <span class="nav-icon">
           <i class="material-icons">&#xe0cf;</i>
         </span>
-        <span class="nav-text">Form</span>
+        <span class="nav-text">Khách hàng</span>
       </a>
-        <ul class="nav-sub">
-          <?php $contacts = App\FormType::all();?>
-          <?php foreach($contacts as $element): ?>
-             <li ui-sref-active="active">
-            <a href="<?php echo e(route('form.manage', [$element->id])); ?>"><span class="nav-text"><?php echo e($element->name); ?></span></a>
-          </li>
-          <?php endforeach; ?>
-        </ul>
     </li>
-    <?php endif; ?>
      <?php if(session('admin')->can(['tao_menu', 'sua_menu', 'xoa_menu'])): ?>
     <li>
       <a>

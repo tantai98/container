@@ -17,7 +17,7 @@
 					<div class="col-sm-6">
 						<h5 class="title"><a href="{{ route('frontend.bai-viet.slug',['id'=>$postProject->id,'slug'=>$postProject->slug]) }}">{{ $postProject->title }}</a></h5>
 						<p class="font-post">{{ $postProject->description }}</p>
-						<h6><i class="fa fa-calendar" aria-hidden="true"></i> 24th Dec,2016</h6>
+						<h6><i class="fa fa-calendar" aria-hidden="true"></i> {{ $postProject->created_at }}</h6>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -26,7 +26,7 @@
 					<div class="col-sm-6">
 						<h5 class="title"><a href="{{ route('frontend.bai-viet.slug',['id'=>$postProject->id,'slug'=>$postProject->slug]) }}">{{ $postProject->title }}</a></h5>
 						<p class="font-post">{{ $postProject->description }}</p>
-						<h6><i class="fa fa-calendar" aria-hidden="true"></i> 24th Dec,2016</h6>
+						<h6><i class="fa fa-calendar" aria-hidden="true"></i> {{ $postProject->created_at }}</h6>
 					</div>
 					<div class="col-sm-6 height-project">
 						<img src="{{ asset($postProject->img) }}" class="with-100 height-100">

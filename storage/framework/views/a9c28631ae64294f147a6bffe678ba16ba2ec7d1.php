@@ -4,7 +4,7 @@
 			<div class="header-left">
 				<div class="w3layouts-logo">
 					<h1>
-						<a href="index.html">3D <span>Panel</span></a>
+						<a href="<?php echo e(route('frontend.trang-chu')); ?>">3D <span>Panel</span></a>
 					</h1>
 				</div>
 			</div>
@@ -31,13 +31,13 @@
 						<ul class="nav navbar-nav menu">
 							<?php foreach($menus as $keyMenu => $valueMenu): ?>
 								<li class="<?php if(isset($valueMenu['child']) && count($valueMenu['child']) > 0): ?> menu-has-child <?php endif; ?>">
-									<a class="<?php if($keyMenu == 0): ?> active list-border <?php endif; ?> scroll" href="index.html"><?php echo e($valueMenu['menuParents']->name); ?></a>
+									<a class="<?php if($keyMenu == 0): ?> active list-border <?php endif; ?> scroll" href=""><?php echo e($valueMenu['menuParents']->name); ?></a>
 									<?php if(isset($valueMenu['child']) && count($valueMenu['child']) > 0): ?>
 									<div class="menu-child">
 										<ul>
 											<?php foreach($valueMenu['child'] as $childMenu): ?>
 											<li>
-												<a href="" class=""><?php echo e($childMenu->name); ?></a>
+												<a href="<?php echo e(route('frontend.trang-chu').'/'.$childMenu->link); ?>" class=""><?php echo e($childMenu->name); ?></a>
 											</li>
 											<?php endforeach; ?>
 										</ul>

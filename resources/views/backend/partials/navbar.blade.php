@@ -199,28 +199,14 @@
         </ul>
     </li>
     @endif
-    @if(session('admin')->can(['xem_lien_he']))
     <li>
-      <a>
-        <span class="nav-caret">
-          <i class="fa fa-caret-down"></i>
-        </span>
-       
+      <a href="{{ route('customerContact') }}">
         <span class="nav-icon">
           <i class="material-icons">&#xe0cf;</i>
         </span>
-        <span class="nav-text">Form</span>
+        <span class="nav-text">Khách hàng</span>
       </a>
-        <ul class="nav-sub">
-          <?php $contacts = App\FormType::all();?>
-          @foreach ($contacts as $element)
-             <li ui-sref-active="active">
-            <a href="{{ route('form.manage', [$element->id]) }}"><span class="nav-text">{{$element->name}}</span></a>
-          </li>
-          @endforeach
-        </ul>
     </li>
-    @endif
      @if(session('admin')->can(['tao_menu', 'sua_menu', 'xoa_menu']))
     <li>
       <a>

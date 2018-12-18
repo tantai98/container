@@ -151,9 +151,9 @@ class Post extends Model
     }
     public static function getPostByCategoryParent($idParent) {
         return DB::table('categories')
-         ->select("posts.id","posts.img","posts.title","posts.slug","posts.description")
-         ->leftJoin('post_category','categories.id','=','post_category.category_id')
-         ->leftJoin('posts',"post_category.post_id",'=','posts.id')
+         ->select("posts.id","posts.img","posts.title","posts.slug","posts.description","posts.created_at")
+         ->join('post_category','categories.id','=','post_category.category_id')
+         ->join('posts',"post_category.post_id",'=','posts.id')
          ->where('categories.parent_id',$idParent)
          ->distinct()
          ->get();
@@ -162,6 +162,14 @@ class Post extends Model
     public static function getCategoryByParentId($idParent) {
         return DB::table('categories')
          ->where("parent_id", $idParent)
+         ->get();
+    }
+
+    public static function getPostByCategory($id) {
+        return DB::table('post_category')
+         ->join('posts',"post_category.post_id",'=','posts.id')
+         ->where('post_category.category_id',$id)
+         ->distinct()
          ->get();
     }
 }

@@ -12,6 +12,7 @@
 <meta charset="utf-8">
 <meta name="keywords" content="Global Tours Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
 <link href="{{ asset('web/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
@@ -43,7 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		});
 	});
-</script> 
+</script>
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
@@ -80,6 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script type="text/javascript">
 		var urlEnv = "{{ route('category.posts') }}";
 		var urlProduct = "{{ route('product.posts.home') }}"
+		var urlContact = "{{ route('contact') }}"
 	</script>
 	<script type="text/javascript" src="{{ asset('web/js/my-js.js') }}"></script>
 <!-- //here ends scrolling icon -->

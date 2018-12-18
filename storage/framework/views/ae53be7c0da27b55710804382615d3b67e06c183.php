@@ -14,12 +14,6 @@
 						<a href="javascript:void(0)" id-cate="<?php echo e($categoryProduct->id); ?>"><?php echo e($categoryProduct->name); ?></a>
 					</li>
 					<?php endforeach; ?>
-					<!-- <li class="change-color-menu">
-						<a href="javascript:void(0)">Thiết kế nhà siêu nhẹ</a>
-					</li>
-					<li class="change-color-menu">
-						<a href="javascript:void(0)">Thuê xe</a>
-					</li> -->
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -30,8 +24,8 @@
 					<div class="col-sm-12 agile-news-img-info">
 						<h5><a href="<?php echo e(route('frontend.san-pham.slug',['id'=>$product->id,'slug'=>$product->slug])); ?>"><?php echo e($product->name); ?></a></h5>
 						<div class="agileits-w3layouts-border"> </div>
-						<p><?php echo e($product->short_description); ?></p>
-						<h6><i class="fa fa-calendar" aria-hidden="true"></i> 24th Dec,2016</h6>
+						<p><span>Giá bán:</span><?php echo e($product->price); ?> VND</p>
+						<h6><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo e($product->created_at); ?></h6>
 					</div>
 					<div class="clearfix"> </div>
 				</div>

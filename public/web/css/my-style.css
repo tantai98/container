@@ -26,11 +26,27 @@
 .margin-bot-60 {
     margin-bottom: 60px;
 }
+.margin-bot-15 {
+    margin-bottom: 15px;
+}
+.margin-bot-30 {
+    margin-bottom: 30px;
+}
+.margin-bot-20 {
+    margin-bottom: 20px;
+}
 .margin-top-bot-10 {
 	margin: 10px 0px;
 }
 .margin-5 {
     margin: 5px;
+}
+
+.padding-top-10 {
+    padding-top: 10px;
+}
+.padding-bot-20 {
+    padding-bottom: 20px;
 }
 /* margin padding */
 .title {
@@ -188,6 +204,9 @@
     padding: 17px;
     background-color: #e7eff2;
     box-shadow: 3px 3px 18px 0px;
+}
+.cate-post {
+    border-bottom: 1px solid #ebebeb;
 }
 
 
